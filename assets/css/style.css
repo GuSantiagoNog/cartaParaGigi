@@ -19,6 +19,7 @@ body {
     height: 400px;
     position: relative;
     perspective: 1000px;
+    box-shadow: 10px 10px 20px #00000080;
     
 }
 
@@ -114,4 +115,119 @@ h1 {
     }
 }
 
+@media screen and (max-width: 500px) {
 
+    body {
+        margin-top: 100px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: aliceblue;
+    }
+
+    .carta {
+
+        background-color: #bc935e;
+        width: 400px;
+        height: 200px;
+        position: relative;
+        perspective: 500px;
+        box-shadow: 10px 10px 20px #00000080;
+        
+    }
+    
+    
+    .triangulo {
+        width: 0;
+        height: 0;
+        border-left: 200px solid transparent;
+        border-right: 200px solid transparent;
+        border-top: 180px solid #d8a96c;
+        border: 1 solid black;
+        position: absolute;
+        transform-origin: top center;
+        animation: puxarTriangulo 1s ease-in-out forwards;
+        z-index: 2;
+    
+    
+    }
+    
+    .triangulo2 {
+        width: 0;
+        height: 0;
+        border-right: 300px solid transparent;
+        border-bottom: 200px solid #efc58f;
+        border: 1 solid black;
+        position: absolute;
+        z-index: 2;
+    
+    
+    }
+    
+    .triangulo3 {
+        width: 0;
+        height: 0;
+        margin-left: 100px;
+        border-left: 300px solid transparent;
+        border-bottom: 200px solid #ecbb7a;
+        border: 1 solid black;
+        position: absolute;
+        transform: translateZ(-5x);
+        z-index: 2;
+    
+    }
+    
+    .foto {
+        background-image: url(../images/foto_gustavoegigi.jpeg);
+        margin-left: 110px;
+        margin-top: 15px;
+        width: 180px;
+        height: 180px;
+        border-radius: 8px;
+        background-size: cover;
+        animation: puxarFoto 3s ease-in-out forwards;
+        animation-delay: 1s;
+        position: absolute;
+    }
+    
+    h1 {
+        display: flex;
+        margin-top: 155px;
+        justify-content: center;
+        font-size: 10px;
+    }
+
+    @keyframes puxarFoto {
+        0% {
+            transform: translate(0,0);
+            z-index: 1;
+        }
+    
+        35% {
+            transform: translate(0,-140px);
+    
+        }
+        80% {
+            z-index: 3;
+        }
+        100% {
+            transform: translateZ(150px);
+            z-index: 3;
+            box-shadow: 10px 10px 20px #00000080;
+        }
+    }
+    
+    @keyframes puxarTriangulo {
+        0% {
+            transform: scaleY(1);
+        }
+        100% {
+            transform: scaleY(-1);
+            z-index: 0;
+            
+        }
+    }
+    
+}
