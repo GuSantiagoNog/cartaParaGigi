@@ -1,0 +1,117 @@
+* {
+    font-family: "Roboto", sans-serif;;
+}
+
+body {
+    margin-top: 100px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    background-color: aliceblue;
+}
+
+.carta {
+    background-color: #bc935e;
+    width: 800px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+    
+}
+
+
+.triangulo {
+    width: 0;
+    height: 0;
+    border-left: 400px solid transparent;
+    border-right: 400px solid transparent;
+    border-top: 360px solid #d8a96c;
+    border: 1 solid black;
+    position: absolute;
+    transform-origin: top center;
+    animation: puxarTriangulo 1s ease-in-out forwards;
+    z-index: 2;
+
+
+}
+
+.triangulo2 {
+    width: 0;
+    height: 0;
+    border-right: 600px solid transparent;
+    border-bottom: 400px solid #efc58f;
+    border: 1 solid black;
+    position: absolute;
+    z-index: 2;
+
+
+}
+
+.triangulo3 {
+    width: 0;
+    height: 0;
+    margin-left: 200px;
+    border-left: 600px solid transparent;
+    border-bottom: 400px solid #ecbb7a;
+    border: 1 solid black;
+    position: absolute;
+    transform: translateZ(-5x);
+    z-index: 2;
+
+}
+
+.foto {
+    background-image: url(../images/foto_gustavoegigi.jpeg);
+    margin-left: 220px;
+    margin-top: 30px;
+    width: 360px;
+    height: 360px;
+    border-radius: 8px;
+    background-size: cover;
+    animation: puxarFoto 3s ease-in-out forwards;
+    animation-delay: 1s;
+    position: absolute;
+}
+
+h1 {
+    display: flex;
+    margin-top: 310px;
+    justify-content: center;
+}
+
+
+@keyframes puxarFoto {
+    0% {
+        transform: translate(0,0);
+        z-index: 1;
+    }
+
+    35% {
+        transform: translate(0,-280px);
+
+    }
+    80% {
+        z-index: 3;
+    }
+    100% {
+        transform: translateZ(300px);
+        z-index: 3;
+        box-shadow: 10px 10px 20px #00000080;
+    }
+}
+
+@keyframes puxarTriangulo {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(-1);
+        z-index: 0;
+        
+    }
+}
+
+
